@@ -45,14 +45,14 @@
                 </div>
 
                 <div class="search">
-                    <form class="searchbar">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" placeholder="Cerca o inizia una nuova chat">
-                    </form>
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input v-model="searchTerm" type="search" placeholder="Cerca o inizia una nuova chat">
+
                 </div>
 
                 <div class="chat-list">
-                    <div v-for="(contact, index) in contacts" class="user" @click="activeChat = index">
+                    <div v-for="(contact, index) in filterByTerm" class="user" @click="activeChat = index">
                         <img :src="contact.avatar" :alt="contact.name + 'picture' ">
 
                         <div class="text-user-chatlist">
@@ -120,7 +120,7 @@
 
 
 
-                        
+
                     </div>
                 </div>
 
@@ -169,7 +169,8 @@
                         </div>
                     </div>
 
-                    <input type="text" placeholder="Scrivi un messaggio" v-model="inputMessage" @keyup.enter="addToChat(), okOutput()">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="inputMessage"
+                        @keyup.enter="addToChat(), okOutput()">
 
                     <div class="record">
                         <i class="fa-solid fa-microphone"></i>
@@ -178,7 +179,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="./assets/js/app.js"></script>

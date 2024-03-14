@@ -194,6 +194,12 @@ const optionsMenu = [
     'Elimina'
 ]
 
+const now = new Date();
+let day = now.getDay();
+let month = now.getMonth() + 1;
+let year = now.getFullYear();
+let hours = now.getHours();
+let minutes = now.getMinutes();
 
 createApp({
     data() {
@@ -201,48 +207,57 @@ createApp({
             activeChat: 5,
             contacts: contacts,
             optionsMenu: optionsMenu,
-            inputMessage: ''
+            inputMessage: '',
+            searchTerm: ''
+        }
+    },
+    computed: {
+        filterByTerm() {
+            return this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(this.searchTerm);
+            });
         }
     },
     methods: {
         addToChat() {
-            const now = new Date()
-            let day = now.getDay();
-            let month = now.getMonth() + 1;
-            let year = now.getFullYear()
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
 
-            const newMessage = { 
-                date: `${day}/${month}/${year}`, 
-                time: `${hours}:${minutes}`, 
-                message: this.inputMessage, 
-                status: 'sent' }
-
+            const newMessage = {
+                date: `${day}/${month}/${year}`,
+                time: `${hours}:${minutes}`,
+                message: this.inputMessage,
+                status: 'sent'
+            }
 
             this.contacts[this.activeChat].messages.push(newMessage);
             this.inputMessage = ''
         },
         okOutput() {
             setTimeout(() => {
-                const now = new Date()
-                let day = now.getDay();
-                let month = now.getMonth() + 1;
-                let year = now.getFullYear()
-                let hours = now.getHours();
-                let minutes = now.getMinutes();
-    
+
                 const okOutputMessage = {
-                    date: `${day}/${month}/${year}`, 
-                    time: `${hours}:${minutes}`, 
-                    message: 'Ok', 
-                    status: 'received' }
-    
-                this.contacts[this.activeChat].messages.push(okOutputMessage);;
+                    date: `${day}/${month}/${year}`,
+                    time: `${hours}:${minutes}`,
+                    message: 'Ok',
+                    status: 'received'
+                }
+
+                this.contacts[this.activeChat].messages.push(okOutputMessage);
+
+                setTimeout(() => {
+
+                    const okOutputMessage = {
+                        date: `${day}/${month}/${year}`,
+                        time: `${hours}:${minutes}`,
+                        message: 'A dopo',
+                        status: 'received'
+                    }
+
+                    this.contacts[this.activeChat].messages.push(okOutputMessage);
+                }, 1500);
+
             }, 1000);
 
         }
     },
-    mounted() { }
 
 }).mount('#app')
