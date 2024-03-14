@@ -189,6 +189,7 @@ const contacts = [
 createApp({
     data() {
         return {
+            activeChat: 2,
             contacts: contacts,
         }
     }

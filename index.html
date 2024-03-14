@@ -160,11 +160,11 @@
             <div class="app-right">
 
                 <nav class="selected-user">
-                    <img src="./assets/img/avatar_1.jpg" alt="My Avatar">
+                    <img :src="contacts[activeChat].avatar" :alt="contacts[activeChat].name">
 
                     <div class="text-selected-user">
-                        <div class="user-name">Michele</div>
-                        <div class="last-seen">Ultimo accesso oggi alle 16:26</div>
+                        <div class="user-name">{{contacts[activeChat].name}}</div>
+                        <div class="last-seen">Ultimo accesso oggi alle {{contacts[activeChat].messages[1].time}}</div>
                     </div>
                     <div class="user-commands">
                         <i class="fa-solid fa-magnifying-glass"></i>
