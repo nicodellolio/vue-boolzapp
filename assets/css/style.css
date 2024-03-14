@@ -38,7 +38,7 @@
     align-items: center;
     height: 100vh;
 
-    & .app {
+    & #app{
         width: 80%;
         display: flex;
         height: 95%;
@@ -145,9 +145,9 @@
 
             & .user {
                 height: 90px;
+                position: relative;
                 display: flex;
                 align-items: center;
-                justify-content: space-around;
                 gap: 1rem;
                 padding: 2.5rem 1rem;
                 border-top: 2px solid var(--bg-search-);
@@ -161,14 +161,15 @@
                 & .preview-message {
                     font-size: 0.85rem;
                     color: #b8bbbd;
-                    margin-right: 1.5rem;
+                    margin-right: 3.25rem;
                 }
 
                 & .time {
                     color: #b8bbbd;
                     margin: 0.5rem;
                     font-size: 0.85rem;
-                    align-self: flex-end;
+                    position: absolute;
+                    right: 6px
                 }
             }
         }
@@ -407,7 +408,7 @@
 @media screen and (max-width: 991px) {
     .container {
 
-        & .app {
+        & #app{
             width: 100%;
             height: 100%;
 
@@ -460,7 +461,7 @@
     @media screen and (max-width: 540px) {
         .container {
 
-            & .app {
+            & #app{
 
                 & .app-left {
                     display: none;

@@ -21,7 +21,7 @@
     <!-- Web App Main Container -->
     <div class="container">
         <!-- Application Container -->
-        <div class="app">
+        <div id="app">
 
             <!-- Left Web App Side -->
             <div class="app-left">
@@ -52,17 +52,17 @@
                 </div>
 
                 <div class="chat-list">
-                    <div class="user 1">
-                        <img src="./assets/img/avatar_1.jpg" alt="My Avatar">
+                    <div v-for="(contact, index) in contacts" class="user">
+                        <img :src="contact.avatar" :alt="contact.name + 'picture' ">
 
                         <div class="text-user-chatlist">
-                            <div class="user-name">Michele</div>
-                            <div class="preview-message">Lorem ipsum dolor sit amet</div>
+                            <div class="user-name">{{contact.name}}</div>
+                            <div class="preview-message">{{contact.messages[1].message}}</div>
                         </div>
-                        <div class="time">16:15</div>
+                        <div class="time">{{contact.messages[1].time}}</div>
 
                     </div>
-
+<!-- 
                     <div class="user 2">
                         <img src="./assets/img/avatar_2.jpg" alt="My Avatar">
 
@@ -151,8 +151,7 @@
                         </div>
                         <div class="time">08:15</div>
 
-                    </div>
-
+                    </div> -->
                 </div>
 
             </div>
@@ -222,11 +221,12 @@
 
                             </div>
                             <div class="time">14:15</div>
-                            <!-- ### BONUS MENU ### -->
                         </div>
-
+                        
                     </div>
                 </div>
+
+                <!-- ### BONUS MENU ### -->
                 <nav class="type-section">
                     <div class="emoji">
                         <i class="fa-regular fa-face-smile"></i>
@@ -280,9 +280,9 @@
             </div>
         </div>
     </div>
-
-    <script src="./assets/js/app.js"></script>
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/app.js"></script>
 </body>
 
 </html>
