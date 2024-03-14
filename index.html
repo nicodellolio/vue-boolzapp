@@ -62,96 +62,6 @@
                         <div class="time">{{contact.messages[1].time}}</div>
 
                     </div>
-<!-- 
-                    <div class="user 2">
-                        <img src="./assets/img/avatar_2.jpg" alt="My Avatar">
-
-                        <div class="text-user-chatlist">
-                            <div class="user-name">Fabio</div>
-                            <div class="preview-message">Lorem ipsum dolor sit amet</div>
-                        </div>
-                        <div class="time">16:05</div>
-
-                    </div>
-
-                    <div class="user 3">
-                        <img src="./assets/img/avatar_3.jpg" alt="My Avatar">
-
-                        <div class="text-user-chatlist">
-                            <div class="user-name">Samuele</div>
-                            <div class="preview-message">Lorem ipsum dolor sit amet</div>
-                        </div>
-                        <div class="time">16:03</div>
-
-                    </div>
-
-                    <div class="user 4">
-                        <img src="./assets/img/avatar_4.jpg" alt="My Avatar">
-
-                        <div class="text-user-chatlist">
-                            <div class="user-name">Alessandro B.</div>
-                            <div class="preview-message">Lorem ipsum dolor sit amet</div>
-                        </div>
-                        <div class="time">15:50</div>
-
-                    </div>
-
-                    <div class="user 5">
-                        <img src="./assets/img/avatar_5.jpg" alt="My Avatar">
-
-                        <div class="text-user-chatlist">
-                            <div class="user-name">Alessandro L.</div>
-                            <div class="preview-message">Lorem ipsum dolor sit amet</div>
-                        </div>
-                        <div class="time">14:15</div>
-
-                    </div>
-
-                    <div class="user 6">
-
-
-                        <img src="./assets/img/avatar_6.jpg" alt="My Avatar">
-
-                        <div class="text-user-chatlist">
-                            <div class="user-name">Arianna</div>
-                            <div class="preview-message">Lorem ipsum dolor sit amet</div>
-                        </div>
-                        <div class="time">14:01</div>
-
-                    </div>
-
-                    <div class="user 7">
-                        <img src="./assets/img/avatar_2.jpg" alt="My Avatar">
-
-                        <div class="text-user-chatlist">
-                            <div class="user-name">Simone</div>
-                            <div class="preview-message">Lorem ipsum dolor sit amet</div>
-                        </div>
-                        <div class="time">11:30</div>
-
-                    </div>
-
-                    <div class="user 8">
-                        <img src="./assets/img/avatar_1.jpg" alt="My Avatar">
-
-                        <div class="text-user-chatlist">
-                            <div class="user-name">Matteo</div>
-                            <div class="preview-message">Lorem ipsum dolor sit amet</div>
-                        </div>
-                        <div class="time">10:59</div>
-
-                    </div>
-
-                    <div class="user 9">
-                        <img src="./assets/img/images.jpeg" alt="My Avatar">
-
-                        <div class="text-user-chatlist">
-                            <div class="user-name">Lautaro</div>
-                            <div class="preview-message">Vamos por la veinte Toroooo</div>
-                        </div>
-                        <div class="time">08:15</div>
-
-                    </div> -->
                 </div>
 
             </div>
@@ -174,54 +84,42 @@
 
                 </nav>
                 <div class="chat">
-                    <div class="baloons">
+                    <div v-for="(contact, index) in contacts" class="baloons">
 
-                        <div class="baloon input">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit vitae officia optio placeat
-                                cupiditate recusandae temporibus, sed cum, illum quae sint! Accusamus voluptatum eveniet
-                                voluptate?</p>
+                        <div v-for="singleMessage in contacts.messages" class="baloon input">
+                            <p>test</p>
                             <div class="menu-drop-down">
                                 <i class="fa-solid fa-chevron-down"></i>
 
                                 <div class="options-menu">
                                     <ul>
-                                        <li>Rispondi</li>
-                                        <li>Inoltra</li>
-                                        <li>Preferiti</li>
-                                        <li>Fissa in alto</li>
-                                        <li>Copia</li>
-                                        <li>Elimina</li>
+                                        <li v-for="option in optionsMenu">{{option}}</li>
                                     </ul>
                                 </div>
 
                             </div>
-                            <div class="time">14:15</div>
-
-                            <!-- ### BONUS MENU ### -->
-
+                            <div class="time">{{contacts[activeChat].messages[1].time}}</div>
                         </div>
+<!-- 
 
                         <div class="baloon answer">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium in illo atque.
-                                Molestiae, assumenda, voluptate necessitatibus aspernatur ab optio neque perferendis
-                                veritatis.</p>
+                            <p>{{contacts[activeChat].messages[1].message}}</p>
                             <div class="menu-drop-down">
                                 <i class="fa-solid fa-chevron-down"></i>
 
                                 <div class="options-menu">
                                     <ul>
-                                        <li>Rispondi</li>
-                                        <li>Inoltra</li>
-                                        <li>Preferiti</li>
-                                        <li>Fissa in alto</li>
-                                        <li>Copia</li>
-                                        <li>Elimina</li>
+                                        <li v-for="option in optionsMenu">{{option}}</li>
                                     </ul>
                                 </div>
 
                             </div>
-                            <div class="time">14:15</div>
-                        </div>
+                            <div class="time">{{contacts[activeChat].messages[1].time}}</div>
+                        </div>  -->
+
+
+
+
                         
                     </div>
                 </div>

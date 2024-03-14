@@ -185,12 +185,24 @@ const contacts = [
     }
 ]
 
+const optionsMenu = [
+    'Rispondi',
+    'Inoltra',
+    'Preferiti',
+    'Fissa in alto',
+    'Copia',
+    'Elimina'
+]
+
 
 createApp({
     data() {
         return {
             activeChat: 2,
             contacts: contacts,
+            optionsMenu: optionsMenu,
+            
+
         }
-    }
+    },
 }).mount('#app')
