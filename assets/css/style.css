@@ -144,6 +144,7 @@
             }
 
             & .user {
+                cursor: pointer;
                 height: 90px;
                 position: relative;
                 display: flex;
