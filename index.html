@@ -87,7 +87,7 @@
 
                 </nav>
                 <div class="chat">
-                    <div v-for="personalChat in contacts[activeChat].messages" class="baloons">
+                    <div v-for="(personalChat, index) in contacts[activeChat].messages" class="baloons">
 
                         <div v-if="personalChat.status == 'sent'" class="baloon input">
                             <p>{{personalChat.message}}</p>
