@@ -204,12 +204,12 @@ let minutes = now.getMinutes();
 createApp({
     data() {
         return {
-            activeChat: 5,
+            activeChat: 0,
+            activeMessage: 0,
             contacts: contacts,
             optionsMenu: optionsMenu,
             inputMessage: '',
-            searchTerm: '',
-            dropdown: 'options-menu',
+            searchTerm: ''
         }
     },
     computed: {
@@ -259,10 +259,8 @@ createApp({
             }, 1000);
 
         },
-        dropOptions(index){
-            this.dropdown= 'options-menu-show'
-            console.log(index);
-        }
     },
 
 }).mount('#app')
+
+// Mi serve recuperare l'inidice del messaggio sul quale clicco, attraverso un [activeMessage] per esempio. Si potrebbe assegnare al menu-drop-down un @click="index === [activeMessage]". Dopo di che attraverso il ternariocreare la condizione per assegnare al options-menu la classe options-menu-show. Qualcosa come= :class="{index === [activeMessage] ? dropdown-show : dropdown-no}"

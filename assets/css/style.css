@@ -338,8 +338,8 @@
     display: none;
 }
 
-.options-menu-show {
-    display: block;
+.options-menu {
+    display: none;
     width: 130px;
     position: absolute;
     top: 20px;
@@ -365,6 +365,10 @@
 
         }
     }
+}
+
+.show{
+    display: block;
 }
 
 .options-menu-show li:hover {

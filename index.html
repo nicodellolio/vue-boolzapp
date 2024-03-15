@@ -93,10 +93,10 @@
                             <p>{{personalChat.message}}</p>
 
 
-                            <div class="menu-drop-down" @click="dropOptions(index)">
+                            <div class="menu-drop-down" @click="activeMessage = index">
                                 <i class="fa-solid fa-chevron-down"></i>
 
-                                <div :class=dropdown>
+                                <div class="options-menu" :class="{ 'show' : activeMessage == index}">
                                     <ul>
                                         <li v-for="option in optionsMenu">{{option}}</li>
                                     </ul>
@@ -113,10 +113,10 @@
                             <p>{{personalChat.message}}</p>
 
 
-                            <div class="menu-drop-down" @click="dropOptions()">
+                            <div class="menu-drop-down" @click="activeMessage = index">
                                 <i class="fa-solid fa-chevron-down"></i>
 
-                                <div :class=dropdown>
+                                <div class="options-menu" :class="{ 'show' : activeMessage == index}">
                                     <ul>
                                         <li v-for="option in optionsMenu">{{option}}</li>
                                     </ul>
