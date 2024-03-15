@@ -209,7 +209,7 @@ createApp({
             optionsMenu: optionsMenu,
             inputMessage: '',
             searchTerm: '',
-            dropdown: 'options-menu'
+            dropdown: 'options-menu',
         }
     },
     computed: {
@@ -259,11 +259,9 @@ createApp({
             }, 1000);
 
         },
-        dropOptions(){
+        dropOptions(index){
             this.dropdown= 'options-menu-show'
-        },
-        undropOptions(){
-            this.dropdown= 'options-menu'
+            console.log(index);
         }
     },
 

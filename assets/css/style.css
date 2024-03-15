@@ -367,12 +367,6 @@
     }
 }
 
-/* .menu-drop-down:hover .options-menu {
-    display: block;
-    padding: 0;
-    transition: all 0.3s ease-out;
-} */
-
 .options-menu-show li:hover {
     background-color: rgb(223, 222, 222);
     font-weight: 700;
@@ -411,6 +405,10 @@
 .record:hover .fa-microphone {
     color: red;
     cursor: pointer;
+}
+
+.fa-paper-plane{
+    transform: rotate(49deg);
 }
 
 
