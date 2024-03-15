@@ -56,13 +56,13 @@
 
                 <div class="chat-list">
                     <div v-for="(contact, index) in filterByTerm" class="user" @click="activeChat = index">
-                        <img :src="contact.avatar" :alt="contact.name + 'picture' ">
+                        <img :src="contact.avatar" :alt="contact.name + ' - picture' ">
 
                         <div class="text-user-chatlist">
                             <div class="user-name">{{contact.name}}</div>
-                            <div class="preview-message">{{contact.messages[1].message}}</div>
+                            <div class="preview-message">{{contact.messages[contact.messages.length - 1].message}}</div>
                         </div>
-                        <div class="time">{{contact.messages[1].time}}</div>
+                        <div class="time">{{contact.messages[contact.messages.length - 1].time}}</div>
 
                     </div>
                 </div>
@@ -91,32 +91,40 @@
 
                         <div v-if="personalChat.status == 'sent'" class="baloon input">
                             <p>{{personalChat.message}}</p>
-                            <div class="menu-drop-down">
+
+
+                            <div class="menu-drop-down" @click="dropOptions()">
                                 <i class="fa-solid fa-chevron-down"></i>
 
-                                <div class="options-menu">
+                                <div :class=dropdown>
                                     <ul>
                                         <li v-for="option in optionsMenu">{{option}}</li>
                                     </ul>
                                 </div>
 
                             </div>
+
+                            
                             <div class="time">{{personalChat.time}}</div>
                         </div>
 
 
                         <div v-if="personalChat.status == 'received'" class="baloon answer">
                             <p>{{personalChat.message}}</p>
-                            <div class="menu-drop-down">
+
+
+                            <div class="menu-drop-down" @click="dropOptions()">
                                 <i class="fa-solid fa-chevron-down"></i>
 
-                                <div class="options-menu">
+                                <div :class=dropdown>
                                     <ul>
                                         <li v-for="option in optionsMenu">{{option}}</li>
                                     </ul>
                                 </div>
 
                             </div>
+
+
                             <div class="time">{{personalChat.time}}</div>
                         </div>
 

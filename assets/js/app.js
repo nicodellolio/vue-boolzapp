@@ -208,7 +208,8 @@ createApp({
             contacts: contacts,
             optionsMenu: optionsMenu,
             inputMessage: '',
-            searchTerm: ''
+            searchTerm: '',
+            dropdown: 'options-menu'
         }
     },
     computed: {
@@ -257,6 +258,12 @@ createApp({
 
             }, 1000);
 
+        },
+        dropOptions(){
+            this.dropdown= 'options-menu-show'
+        },
+        undropOptions(){
+            this.dropdown= 'options-menu'
         }
     },
 
