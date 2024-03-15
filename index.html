@@ -96,14 +96,14 @@
                             <div class="menu-drop-down" @click="activeMessage = index">
                                 <i class="fa-solid fa-chevron-down"></i>
 
-                                <div class="options-menu" :class="{ 'show' : activeMessage == index}">
+                                <div v-if="activeMessage == index" class="options-menu" :class="{ 'show' : activeMessage == index}">
                                     <ul>
                                         <li v-for="option in optionsMenu">{{option}}</li>
+                                        <li @click="deleteMessage(activeMessage)">Elimina</li>
                                     </ul>
                                 </div>
 
                             </div>
-
 
                             <div class="time">{{personalChat.time}}</div>
                         </div>
@@ -119,6 +119,7 @@
                                 <div class="options-menu" :class="{ 'show' : activeMessage == index}">
                                     <ul>
                                         <li v-for="option in optionsMenu">{{option}}</li>
+                                        <li @click="deleteMessage(activeMessage)">Elimina</li>
                                     </ul>
                                 </div>
 

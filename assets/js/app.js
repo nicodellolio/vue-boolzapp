@@ -191,7 +191,6 @@ const optionsMenu = [
     'Preferiti',
     'Fissa in alto',
     'Copia',
-    'Elimina'
 ]
 
 const now = new Date();
@@ -205,7 +204,7 @@ createApp({
     data() {
         return {
             activeChat: 0,
-            activeMessage: 0,
+            activeMessage: null,
             contacts: contacts,
             optionsMenu: optionsMenu,
             inputMessage: '',
@@ -258,6 +257,9 @@ createApp({
 
             }, 1000);
 
+        },
+        deleteMessage(messageID) {
+            this.contacts[this.activeChat].messages.splice(messageID, 1)
         },
     },
 
